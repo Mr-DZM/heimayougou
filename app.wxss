@@ -1,0 +1,2 @@
+/* 这里是设置的全局样式 */
+@import "./styles/iconfont.wxss";
