@@ -1,2 +1,17 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<SearchInput></SearchInput>
+<!-- 轮播图 开始 -->
+<view class="index_swiper">
+    <!-- 
+      swiper 默认的宽度和高度100% * 150px
+      image 默认的宽度 100%（320px）* 240px
+      图片原图的宽度和高度750px* 340px
+      要给swiper标签加一个动态变化的高度 这样图片才能显示完全
+      原图的宽度/ 原图的高度= swiper的宽度已知 变化后的图片的宽度750rpx（100%） /变化后的高度
+      750px /340px =750rpx/340rpx
+      -->
+    <swiper indicator-dots autoplay circular>
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+        <image mode="widthFix" src="{{item.image_src}}"></image>
+      </swiper-item>
+    </swiper>
+</view>

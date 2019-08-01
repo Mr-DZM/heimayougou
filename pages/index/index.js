@@ -1,66 +1,51 @@
-// pages/index/index.js
+//Page Object
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    // 定义一个轮播图数据
+    swiperList:[],
+  },
+  //options(Object)
+  onLoad: function(options) {
+    // 调用函数 getSwiperList 获得轮播图数据
+    this.getSwiperList();
+  },
+  // 获取轮播图的数据
+  getSwiperList(){
+    // 微信自带的请求
+     wx.request({
+       url: "https://api.zbztb.cn/api/public/v1/home/swiperdata",
+       success: result => {
+         console.log(result);
+       }
+     });
+  },
+  onReady: function() {
+    
+  },
+  onShow: function() {
+    
+  },
+  onHide: function() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onUnload: function() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  onPullDownRefresh: function() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  onReachBottom: function() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+  onShareAppMessage: function() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
+  onPageScroll: function() {
 
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+  //item(index,pagePath,text)
+  onTabItemTap:function(item) {
 
   }
-})
+});
+  

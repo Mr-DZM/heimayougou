@@ -1,2 +1,17 @@
-/* 这里是设置的全局样式 */
+/* 这里是设置的全局样式  */
 @import "./styles/iconfont.wxss";
+
+page,view,navigator,text,swiper,swiper-item,rich-text, button,input,image{
+  box-sizing: border-box;
+}
+image{
+  width:100%;
+}
+page{
+  /* 定义主题颜色 */
+  --themeColor:#eb4450;
+  /* 因为现在是375 * 667 所以根据 375px(100%) = 750rpx(100%)  => 1px=2rpx */
+  font-size: 28rpx;
+  color: #666;
+}
+
