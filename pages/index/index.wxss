@@ -1,1 +1,4 @@
-/* pages/index/index.wxss */
+.index_swiper swiper{
+  /* 这里算的值是根据 轮播图原图图片得来的 */
+  height: 340rpx;
+}
