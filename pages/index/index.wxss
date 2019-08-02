@@ -1,4 +1,36 @@
-.index_swiper swiper{
+.index_swiper swiper {
   /* 这里算的值是根据 轮播图原图图片得来的 */
   height: 340rpx;
+}
+.index_nav_cate {
+  display: flex;
+}
+.index_nav_cate navigator {
+  flex: 1;
+  padding: 30rpx;
+}
+.index_floor .floor_item .floor_title {
+  padding: 10rpx 0;
+}
+.index_floor .floor_item .floor_list {
+  overflow: hidden;
+  padding: 0 10rpx;
+}
+.index_floor .floor_item .floor_list .goods_item {
+  float: left;
+  width: 33.33%;
+  /* 选中最后面四个navigator元素 */
+}
+.index_floor .floor_item .floor_list .goods_item image {
+  height: 100%;
+}
+.index_floor .floor_item .floor_list .goods_item:nth-of-type(1) {
+  height: 415.94827586rpx;
+}
+.index_floor .floor_item .floor_list .goods_item:nth-last-child(-n+4) {
+  height: 207.97413793rpx;
+  border-left: 10rpx solid #fff;
+}
+.index_floor .floor_item .floor_list .goods_item:nth-last-child(-n+2) {
+  border-top: 10rpx solid #fff;
 }
