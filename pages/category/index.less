@@ -1,0 +1,58 @@
+.cate_container {
+  padding-top:5rpx;
+  display: flex;
+  // 不想让less解析代码的话 使用~'样式'
+   height: ~"calc(100vh - 90rpx)";
+  .left_menu {
+    flex: 1;
+    .menu_item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80rpx;
+      font-size: 30rpx;
+      color: #000;
+    }
+    .active{
+    color: var(--themeColor);
+    border-left: 5rpx solid currentColor
+  }
+  }
+
+
+  .right_content {
+    flex: 3;
+    .goods_group {
+      .goods_title {
+        height: 80rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .delimiter {
+          color: #666;
+          padding: 0 20rpx;
+        }
+        .goods_group_title {
+          font-size: 30rpx;
+          color: #000;
+        }
+      }
+      .goods_list {
+        display: flex;
+        // 换行
+        flex-wrap: wrap;
+        navigator {
+          width: 33.33%;
+          // 是块级元素就会起作用 起到居中的作用
+          text-align: center;
+          image {
+            width: 50%;
+          }
+          .goods_name {
+
+          }
+        }
+      }
+    }
+  }
+}

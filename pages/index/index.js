@@ -20,7 +20,7 @@ Page({
     this.getfloorList();
   },
   // 获取轮播图的数据
-  getSwiperList() {
+   getSwiperList() {
     // // 微信自带的请求 有很多默认值都被手动删了
     //  wx.request({
     //    url: "https://api.zbztb.cn/api/public/v1/home/swiperdata",
@@ -32,14 +32,19 @@ Page({
     //      });
     //    }
     //  });
-    // 封装后的方法
+    // 封装后的方法     // 第一次优化
     request({
-      url: "https://api.zbztb.cn/api/public/v1/home/swiperdata"
+      url: "/home/swiperdata"
     }).then(result => {
       this.setData({
-        swiperList: result.data.message
+        swiperList: result
       });
     });
+    // const result= await request({url: "https://api.zbztb.cn/api/public/v1/home/swiperdata"})
+    // this.setData({
+    //     swiperList: result
+    // });
+        
   },
   // 获取分类导航数据
   getnavCateList() {
@@ -57,11 +62,12 @@ Page({
     //     });
     //   }
     // });
+    // 第一次优化
     request({
-      url: "https://api.zbztb.cn/api/public/v1/home/catitems"
+      url: "/home/catitems"
     }).then(result => {
       this.setData({
-        navCateList: result.data.message
+        navCateList: result
       });
     });
   },
@@ -77,11 +83,13 @@ Page({
     //     });
     //   }
     // });
+    //
+    // 第一次优化
     request({
-      url: "https://api.zbztb.cn/api/public/v1/home/floordata"
+      url: "/home/floordata"
     }).then(result => {
       this.setData({
-        floorList: result.data.message
+        floorList: result
       });
     });
   },

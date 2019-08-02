@@ -1,66 +1,45 @@
-// pages/category/index.js
+import { request } from "../../request/index.js";
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    // 左侧的菜单数组
+    leftMenuList: [],
+    // 右侧的菜单数组
+    rightGoodsList: [],
+    // 定义一个起始值
+    currentindex:0,
+  },
+  //options(Object)
+  onLoad: function(options) {
+    // 获取分类页面的数据
+    this.getCategoryList();
+  },
+  getCategoryList() {
+    request({
+      url: "/categories"
+    }).then(result => {
+      // 分析可得我们左侧列表只需要大标题和id即可 过滤取到数据
+      // 注意map里面的中阔号() 是简写 相当于 是 { return 数据 }
+      let leftMenuList = result.map(v => ({
+        cat_id: v.cat_id,
+        cat_name: v.cat_name
+      }));
+      // 先获取第一个大标题大家电的数据
+      let rightGoodsList=result[0].children;
+      this.setData({
+        leftMenuList,
+        rightGoodsList
+      });
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+  onReady: function() {},
+  onShow: function() {},
+  onHide: function() {},
+  onUnload: function() {},
+  onPullDownRefresh: function() {},
+  onReachBottom: function() {},
+  onShareAppMessage: function() {},
+  onPageScroll: function() {},
+  //item(index,pagePath,text)
+  onTabItemTap: function(item) {}
+});
