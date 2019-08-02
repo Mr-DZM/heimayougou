@@ -1,0 +1,32 @@
+.first_tab {
+  .goods_group {
+    display: flex;
+    border-bottom: 1rpx solid #ccc;
+    /* 左侧图片 */
+    .goods_img_wrap {
+      flex: 1;
+      padding: 20rpx 40rpx;
+    }
+    /* 右侧详情信息 */
+    .goods_info_wrap {
+      padding: 20rpx 0;
+      flex: 2;
+      display: flex;
+      // 改变主轴方向
+      flex-direction: column;
+      // 直接平分剩余空间
+      justify-content: space-around;
+      .goods_name {
+        // 下面四个步骤都是设置文本两行显示 超过两行就...
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      .goods_price {
+        color:var(--themeColor);
+        font-size: 34rpx;
+      }
+    }
+  }
+}
